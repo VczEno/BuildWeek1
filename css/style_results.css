@@ -1,7 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;800&family=Outfit:wght@200;400;600;800&display=swap');
 
-h1, p {
+/* Selettori generici */
+
+body{
+    box-sizing: border-box;
+}
+
+#top-block, #bottom-block, #center-box {
+    text-align: center;
+}
+
+h1, p, a {
     font-family: 'Outfit', 'sans-serif';
+}
+
+/* primo blocco (results) */
+
+
+#top-block p {
+    font-size: 1.5rem;
+    font-weight: 200;
 }
 
 h1 {
@@ -10,56 +28,109 @@ h1 {
     margin-bottom: 0.5rem;
 }
 
-#top-block p {
-    font-size: 1.5rem;
-    font-weight: 200;
+#top-block {
+   padding-bottom: 1.5rem;
 }
 
-#top-block, #bottom-block, #center-box {
-    text-align: center;
+/* secondo blocco (punteggio) */
 
+section {
+   position: relative;
+   margin: 6rem 0;
 }
 
-#center-box, #left-box, #right-box {
+#center-box, .left-box, .right-box {
     display: inline-block;
 }
 
-#left-box,  #right-box {
-    width: 20%;
-    text-align: left;
+.left-box, .right-box {
+    position:relative;
+   /*  padding-top: 5rem;
+    padding-bottom: 5rem; */
 }
 
-#left-box p, #right-box p {
+
+.right-box {
+    text-align: right;
+    float: right;
+}
+
+#center-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.outercircle {
+    position: relative;
+    border-radius: 50%;
+    border: 35px solid #00ffff;
+    height: 13rem;
+    width:13rem;
+    box-shadow: 0px 0px 20px rgb(0, 0, 0);
+}
+
+.circle-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.circle-text p{
+    font-family:'inter', 'sans-serif';
+    font-weight: 600;
+    margin-bottom: 0.6em;
+    font-size: 0.8rem;
+   
+} 
+
+/* formattazione testo secondo blocco */
+
+.score p {
     font-size: 2.5rem;
     font-weight: 600;
     margin-bottom: 0.2rem;
-
 }
 
-#left-box p:last-child, #right-box p:last-child {
+.score p:last-child {
     font-size: 1rem;
     font-weight: 200;
 }
 
-#left-box p:first-child, #right-box p:first-child {
+.score p:first-child {
     font-weight: 400;
 }
 
-#right-box p {
-    text-align: right;
+.blue-text {
+    color: #00ffff ;
+
 }
 
-#center-box {
-    width: 50%
+#certificate {
+    font-weight: 200;
+    font-size: 0.6rem;
+    line-height: 0.8rem ;
 }
 
-#center-box p {
-    font-family: 'inter', 'sans-serif';
+ /* terzo blocco con tasto RATE US */
+
+#bottom-block {
+   padding: 1.5rem 0
 }
 
 button {
     border-radius: 0px;
-    border: 2px solid 
-
+    border: 2px solid #fff;
+    background:none;
+    padding: 0.7rem 3rem;
+    
 }
-
+button a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+}
