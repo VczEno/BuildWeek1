@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;800&family=Outfit:wght@200;400;600;800&display=swap');
+/* font-family: 'Inter', sans-serif;
+font-family: 'Outfit', sans-serif; */
+
+header {
+    
+}
+
+#timer {
+    text-align: center;
+    padding: 1.5em;
+    float: right;
+    clear: both;
+    border: 1em solid #95679A;
+    border-radius: 50%;
+}
+
+.timer_text {
+    font-size: 0.5em;
+}
+
+main {
+    text-align: center;
+    margin: 6em;
+    
+}
+
+form {
+    margin: 0 auto;
+    width: 80%;
+}
+
+#question {
+    margin: 2em;
+    font-family: 'Outfit', sans-serif;
+    font-size: 2em;
+}
+
+#question span {
+    font-weight: 600;
+}
+
+label {
+    background-color: rgb(49, 42, 92, 0.5);
+    display: inline-block;
+    width: 20rem;
+    padding: 1em;
+    transition: all 0.3s;
+    border-radius: 30px;
+    border: solid 2px;
+    margin: 0.6em;
+    color: #fff;
+  } 
+  
+input[type="radio"] {  /*Nasconde il pallino del radio button*/
+    display: none;
+  } 
+  
+input[type="radio"]:checked + label {
+    border: solid 2px green;
+  }  
