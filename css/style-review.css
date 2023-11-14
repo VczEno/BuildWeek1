@@ -7,9 +7,9 @@ main{
 h2 {
     font-family: 'outfit', 'sans-serif';
     font-weight: 800;
-    font-size: 5em;
+    font-size: 3.5em;
     padding-top: 1em;
-    padding-bottom: 0.3em;
+    padding-bottom: 0.5em;
 }
 
 p {
@@ -19,14 +19,15 @@ p {
 }
 
 .stella {
-    padding: 0.5em;
+    padding: 0.3em;
 }
 
 #stelline {
-    padding-bottom: 4em;
+    padding-bottom: 3.5em;
 }
 
 input[type=text] {
+    color: white;
     width: 40%;
     padding: 1em 0.5em;
     margin: 0.6em;
@@ -34,6 +35,10 @@ input[type=text] {
     border-color: transparent;
     border-bottom-color: #d20094;
     font-size: 1em;
+  }
+
+  input[type="text"]::placeholder {
+    padding-left: 20px;
   }
 
   #bottone {
@@ -46,7 +51,7 @@ input[type=text] {
     border: #00FFFF;
     font-family: 'outfit', 'sans-serif';
     font-weight: 800;
-    font-size: 1.4em;
-    padding: 1em 3em;
+    font-size: 1.35em;
+    padding: 0.75em 2.5em;
     box-shadow: 0 0 100px rgba(52, 152, 219, 0.8);
   }
