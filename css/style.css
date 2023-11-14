@@ -26,3 +26,7 @@ header {
 #logo {
   width: 10em;
 }
+
+label:hover, #proceedBtn:hover, input:hover, .stella:hover, #bottone {
+  cursor: pointer;
+}

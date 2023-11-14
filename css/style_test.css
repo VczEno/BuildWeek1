@@ -7,8 +7,11 @@ header {
 }
 
 #timer {
+    width: 3em;
+    height: 3em;
+    padding: 2em;
+    line-height: 1.2;
     text-align: center;
-    padding: 1.5em;
     float: right;
     clear: both;
     border: 1em solid #95679A;
@@ -16,13 +19,16 @@ header {
 }
 
 .timer_text {
-    font-size: 0.5em;
+    font-size: 0.6em;
+}
+
+.timer_number {
+    font-size: 1.6em;
 }
 
 main {
     text-align: center;
-    margin: 6em;
-    
+    margin: 4em;
 }
 
 form {
@@ -31,9 +37,14 @@ form {
 }
 
 #question {
-    margin: 2em;
+    margin: 1em;
     font-family: 'Outfit', sans-serif;
     font-size: 2em;
+}
+
+#question {
+    font-size: 3.5em;
+    padding: 0 0.5em 0 0.5em;
 }
 
 #question span {
@@ -41,21 +52,39 @@ form {
 }
 
 label {
-    background-color: rgb(49, 42, 92, 0.5);
-    display: inline-block;
-    width: 20rem;
-    padding: 1em;
-    transition: all 0.3s;
-    border-radius: 30px;
-    border: solid 2px;
-    margin: 0.6em;
+    background: 
+        linear-gradient(#282952 0 0) padding-box, /*this is your grey background*/
+        linear-gradient(to bottom right, #fff, transparent) border-box;
     color: #fff;
-  } 
-  
+    padding: 14px;
+    border: 0.2em solid transparent;
+    border-radius: 30px;
+    display: inline-block;
+    margin: 75px 0;
+    width: 20rem;
+    margin: 0.5em;
+    transition: all 0.3s; 
+}
+
+label:hover {
+    cursor: pointer;
+}
+
 input[type="radio"] {  /*Nasconde il pallino del radio button*/
     display: none;
   } 
-  
-input[type="radio"]:checked + label {
-    border: solid 2px green;
-  }  
+
+/* CLASSE PER CLICK SU BOTTONE */
+/* input[type="radio"]:checked + label {
+    background: 
+            linear-gradient(to bottom, #d20094, #900080) border-box;
+    border: 0.2em solid white;
+} */
+
+h4 {
+    margin-top: 5em;
+}
+
+h4 span:last-child {
+    color: #d20094;
+}
