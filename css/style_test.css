@@ -57,7 +57,7 @@ label {
         linear-gradient(to bottom right, #fff, transparent) border-box;
     color: #fff;
     padding: 14px;
-    border: 0.2em solid transparent;
+    border: double 4px transparent;
     border-radius: 30px;
     display: inline-block;
     margin: 75px 0;
@@ -66,20 +66,19 @@ label {
     transition: all 0.3s; 
 }
 
-label:hover {
-    cursor: pointer;
-}
-
 input[type="radio"] {  /*Nasconde il pallino del radio button*/
     display: none;
-  } 
+} 
 
 /* CLASSE PER CLICK SU BOTTONE */
-/* input[type="radio"]:checked + label {
-    background: 
-            linear-gradient(to bottom, #d20094, #900080) border-box;
-    border: 0.2em solid white;
-} */
+input[type="radio"]:checked + label {
+        width: 20rem;
+        border: double 4px transparent;
+        border-radius: 80px;
+        background-image: linear-gradient(to bottom, #d20094, #900080), radial-gradient(circle at bottom right, transparent, #fff);
+        background-origin: border-box;
+        background-clip: padding-box, border-box;
+}
 
 h4 {
     margin-top: 5em;
