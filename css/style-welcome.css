@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;800&family=Outfit:wght@200;400;600;800&display=swap');
+/* font-family: 'Inter', sans-serif;
+Titoli: font-family: 'Outfit', sans-serif; */
+
+h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 4rem;
+    line-height: 0.75em;
+    margin: 0.75em 0;
+}
+
+span,
+h2 {
+    font-weight: 600;
+}
+
+h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.75rem;
+    color: #d20094;
+    margin: 0.5em 0;
+}
+
+ul {
+    margin: 3em 1.5em;
+}
+
+ul li {
+    margin: 0.5em 0;
+}
+
+.lastRow {
+    display: flex;
+    vertical-align: middle;
+}
+
+input {
+    height: 20px;
+    width: 20px;
+
+}
+
+#proceedBtn {
+    text-align: center;
+    height: 2em;
+    width: 8em;
+    background-color: #00ffff;
+}

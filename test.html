@@ -6,7 +6,7 @@
     <title>Test</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="css/style_test.css">
 </head>
 <body>
     <div class="container">
@@ -14,15 +14,15 @@
             <img src="materiale BW1/assets/epicode_logo.png" alt="" id="logo"> <!-- Logo -->
         </header>
         <div id="timer">  <!-- Timer -->
-            <p>SECONDS</p>
-            <p> </p>
-            <p> REMAINING </p>        
+            <p class="timer_text">SECONDS</p>
+            <p class="timer_number"> 12 </p>
+            <p class="timer_text"> REMAINING </p>        
         </div>
-
+    <main>
         <form id="test">   <!-- Riquadro con domande e rispettive 4 risposte -->
-            <h2 id="question"> How can I create a checkbox in HTML? </h2>
+            <h2 id="question"> How can I create a <span> checkbox in HTML? </span> </h2>
 
-            <input type="radio" id="first" name="answer" value="first" class="answer">
+            <input type="radio" id="first" name="answer" value="first" class="answer" checked="false">
             <label for="first">PROVA</label>
 
             <input type="radio" id="second" name="answer" value="second" class="answer">
@@ -36,7 +36,8 @@
         </form>
         
 
-        <h4> QUESTION <span></span> <span> /10 </span> </h4> <!--  Scorrere delle domande-->
+        <h4> QUESTION <span> 1 </span> <span> / 10 </span> </h4> <!--  Scorrere delle domande-->
+    </main>
     </div> 
     <script src="#"></script>
 </body>

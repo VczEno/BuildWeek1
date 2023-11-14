@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;800&family=Outfit:wght@200;400;600;800&display=swap');
 /* font-family: 'Inter', sans-serif;
 font-family: 'Outfit', sans-serif; */
+
 html {
   font-size: 1em;
   color: #fff;
@@ -10,7 +11,7 @@ html {
 body {
   background-image: url("../materiale\ BW1/assets/bg.jpg");
   background-size: cover;
-
+  background-attachment: fixed;
 }
 
 .container {
@@ -26,38 +27,6 @@ header {
   width: 10em;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-label {
-    display: inline-block;
-    width: 200px;
-    padding: 10px;
-    border: solid 2px #ccc;
-    transition: all 0.3s;
-  } 
-  
-input[type="radio"] {  /*Nasconde il pallino del radio button*/
-    display: none;
-  } 
-  
-input[type="radio"]:checked + label {
-    border: solid 2px green;
-  }  
+label:hover, #proceedBtn:hover, input:hover, .stella:hover, #bottone {
+  cursor: pointer;
+}

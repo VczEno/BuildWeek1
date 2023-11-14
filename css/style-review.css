@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;800&family=Outfit:wght@200;400;600;800&display=swap');
+
+main{
+    text-align: center;
+}
+
+h2 {
+    font-family: 'outfit', 'sans-serif';
+    font-weight: 800;
+    font-size: 3.5em;
+    padding-top: 1em;
+    padding-bottom: 0.5em;
+}
+
+p {
+    font-family: 'inter', 'sans-serif';
+    font-size: 1.5em;
+    padding-bottom: 1em;
+}
+
+.stella {
+    padding: 0.3em;
+}
+
+#stelline {
+    padding-bottom: 3.5em;
+}
+
+input[type=text] {
+    color: white;
+    width: 40%;
+    padding: 1em 0.5em;
+    margin: 0.6em;
+    background-color: transparent;
+    border-color: transparent;
+    border-bottom-color: #d20094;
+    font-size: 1em;
+  }
+
+  input[type="text"]::placeholder {
+    padding-left: 20px;
+  }
+
+  #bottone {
+    padding-top: 3em;
+  }
+
+  button {
+    color: black;
+    background-color: #00FFFF;
+    border: #00FFFF;
+    font-family: 'outfit', 'sans-serif';
+    font-weight: 800;
+    font-size: 1.35em;
+    padding: 0.75em 2.5em;
+    box-shadow: 0 0 100px rgba(52, 152, 219, 0.8);
+  }
