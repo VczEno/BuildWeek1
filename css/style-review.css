@@ -26,6 +26,11 @@ p {
     padding-bottom: 3.5em;
 }
 
+path {
+    fill: grey;
+    transition: fill 0.3s ease;
+}
+
 input[type=text] {
     color: white;
     width: 40%;
@@ -40,6 +45,10 @@ input[type=text] {
   input[type="text"]::placeholder {
     padding-left: 20px;
   }
+
+ input:focus {
+    outline: none;
+ }
 
   #bottone {
     padding-top: 3em;
