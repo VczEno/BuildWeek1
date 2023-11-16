@@ -19,25 +19,29 @@
                 <h1>Results</h1>
                 <p>The summary of your answers:</p>
             </div>
-            <section> <!-- Secondo blocco con i risultati del test, a suo volta fatto di 3 blocchi -->
-                <div id="left-box"> <!-- Primo blocco con le risposte positive -->
-                    <p>Correct</p>
-                    <p class="percentage">66.7%</p>
-                    <p>4/6 questions</p>
+            <section>
+                <div class="left-box"> <!-- Secondo blocco con i risultati del test, a suo volta fatto di 3 blocchi -->
+                    <div class="score"> <!-- Primo blocco con le risposte positive -->
+                        <p>Correct</p>
+                        <p class="percentage">66.7%</p>
+                        <p>4/6 questions</p>
+                    </div>
                 </div>
                 <div id="center-box"> <!-- Secondo blocco con il grafico ad anello -->
-                    <div>
-                        <p>Congratulation!</p>
-                        <p>You passed the exam</p>
-                        <p>We'll send you the certificate in few minutes. Check your email (including promotions/spam folder)</p>
-                        
+                    <div class="outercircle">
+                        <div class="circle-text">
+                            <p>Congratulations!</p>
+                            <p class="blue-text">You passed the exam.</p>
+                            <p id="certificate">We'll send you the certificate in few minutes. Check your email (including promotions / spam folder)</p>
+                        </div>
                     </div>
-                    
                 </div>
-                <div id="right-box"> <!-- terzo blocco con le risposte negative -->
-                    <p>Wrong</p>
-                    <p class="percentage">33.3%</p>
-                    <p>2/6 questions</p>
+                <div class="right-box">
+                    <div class="score"> <!-- terzo blocco con le risposte negative -->
+                        <p>Wrong</p>
+                        <p class="percentage">33.3%</p>
+                        <p>2/6 questions</p>
+                    </div>
                 </div>
             </section>
             <div id="bottom-block"> <!-- Terzo blocco con il tasto per recensire -->
