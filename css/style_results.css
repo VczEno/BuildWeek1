@@ -119,6 +119,10 @@ section {
 
 }
 
+.pink-text {
+    color: #d20094;
+}
+
 #certificate {
     font-weight: 200;
     font-size: 0.6rem;
@@ -157,7 +161,7 @@ button a {
   .pie { /* anello in primo piano, dinamico */
     --p:75;   /* porzione anello che si colora */
     --b:30px;   /* spessore cerchio */
-    --c:cyan;  /* colore */
+    --c:#00ffff;  /* colore */
     --w:250px; /* grandezza */
     transform: scaleX(-1); /* serve per farlo muovere in senso antiorario, !!! si riflettono anche le scritte all'interno, 
                                 applicare la stessa proprietà anche alle scritte per annullare l'effetto */
@@ -175,7 +179,7 @@ button a {
   .pieFull  { /* anello di sfondo, deve essere pieno e non animato */
     --p:100;   /* porzione di anello che si colora  */
     --b:30px;   /* spessore cerchio */
-    --c:rgb(255, 0, 242); /* colore */
+    --c:#d20094; /* colore */
     --w:250px; /* grandezza */
    
     
