@@ -2,33 +2,21 @@
 /* font-family: 'Inter', sans-serif;
 font-family: 'Outfit', sans-serif; */
 
-header {
-    
-}
-
-#timer {
-    width: 3em;
-    height: 3em;
-    padding: 2em;
-    line-height: 1.2;
+.timer_text1, .timer_text2 {
     text-align: center;
-    float: right;
-    clear: both;
-    border: 1em solid #95679A;
-    border-radius: 50%;
+    line-height: 1.2em;
+    font-size: 0.7em;
 }
 
-.timer_text {
-    font-size: 0.6em;
-}
-
-.timer_number {
-    font-size: 1.6em;
+#timer_number {
+    text-align: center;
+    font-size: 3em !important;
+    font-weight: 600;
 }
 
 main {
     text-align: center;
-    margin: 4em;
+    margin-top: 6em;
 }
 
 form {
@@ -37,13 +25,9 @@ form {
 }
 
 #question {
-    margin: 1em;
+    margin: 1.5em;
     font-family: 'Outfit', sans-serif;
-    font-size: 2em;
-}
-
-#question {
-    font-size: 3.5em;
+    font-size: 2.5em;
     padding: 0 0.5em 0 0.5em;
 }
 
@@ -56,14 +40,15 @@ label {
         linear-gradient(#282952 0 0) padding-box, /*this is your grey background*/
         linear-gradient(to bottom right, #fff, transparent) border-box;
     color: #fff;
+    line-height: 2em;
     padding: 14px;
     border: double 4px transparent;
     border-radius: 30px;
     display: inline-block;
-    margin: 75px 0;
-    width: 20rem;
-    margin: 0.5em;
-    transition: all 0.3s; 
+    width: 20em;
+    height: 2em;
+    margin: 1em;
+    /* transition: all 0.3s;  */
 }
 
 input[type="radio"] {  /*Nasconde il pallino del radio button*/
@@ -81,9 +66,88 @@ input[type="radio"]:checked + label {
 }
 
 h4 {
-    margin-top: 5em;
+    margin: 8em 0 0 0;
 }
 
 h4 span:last-child {
     color: #d20094;
+}
+
+/* prove timer anello */
+
+@property --p{
+    syntax: '<number>';
+    inherits: true;
+    initial-value:0;
+  }
+  
+  .timer {
+    position: absolute;
+    top: 7%;
+    right: 10%;
+  }
+  
+  .pie { /* anello in primo piano, dinamico */
+    --p:100;   /* porzione anello che si colora */
+    --b:1em;   /* spessore cerchio */
+    --c:cyan;  /* colore */
+    --w:10em; /* grandezza */
+    transform: scaleX(1); /* serve per farlo muovere in senso antiorario, !!! si riflettono anche le scritte all'interno, 
+                                applicare la stessa proprietà anche alle scritte per annullare l'effetto */   
+    width:var(--w);
+    aspect-ratio:1;
+    display:inline-grid;
+    place-content: center;
+    position: absolute;
+  }
+
+  .pieFull  { /* anello di sfondo, deve essere pieno e non animato */
+    --p:100;   /* porzione di anello che si colora  */
+    --b:1em;   /* spessore cerchio */
+    --c:rgb(142, 101, 150); /* colore */
+    --w:10em; /* grandezza */
+    width:var(--w);
+    aspect-ratio:1;
+    position: relative;
+    place-content:center;
+  }
+
+  .pie:before,
+  .pie:after,
+  .pieFull:before,
+  .pieFull:after { /* rendono il bordo esterno dell'anello circolare, con il radius=0, esce un quadrato */
+    content:"";
+    position:absolute;
+    border-radius:50%;
+  } 
+
+  .pie:before, .pieFull:before { /* definiscono la colorazione, tramite un "gradiente" con stacco netto da transparente a colorato */
+    inset:0;
+    background:
+      radial-gradient(farthest-side,var(--c) 98%,#0000) top/var(--b) var(--b) no-repeat,
+      conic-gradient(var(--c) calc(var(--p)*1%),#0000 0);
+    -webkit-mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+            mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+  }
+
+/*   .pie:after, .pieFull:after { /* non cambia averlo o no...boh 
+    inset:calc(50% - var(--b)/2);
+    background:var(--c);
+    transform:rotate(calc(var(--p)*3.6deg)) translateY(calc(50% - var(--w)/2));  
+}  */
+
+.animate { /* animazione con elemento da animare (p), durata e delay */
+    animation:p 30s 1s linear;
+}
+
+.no-round:before {  /* per modificare e arrotondare le estremita */
+    background-size:0 0,auto;
+}
+
+.no-round:after { /* per modificare e arrotondare le estremita */
+    content:none;
+} 
+
+@keyframes p {  /* Necessario per l'animazione, variando il valore cambia la porzione precaricata prima di fare l'animazione */
+    from{--p:0}
 }
