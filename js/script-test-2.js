@@ -15,8 +15,6 @@ function assignQuestionsandAnswers() {
   });
 }
 
-
-
 function shuffle() {
   questions.sort(() => Math.round(Math.random() * 10));
 }

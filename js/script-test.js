@@ -1,23 +1,28 @@
-// TIMER, ANNA
+// TIMER, ANNA  //  //INSERITO TUTTO IL TIMER IN UNA FUNZIONE
 
-let timerLimit = 30;
-let spanTimer = document.querySelector("#timer_number"); //queryselector da definire
-let secondi = timerLimit; 
+function timer() {
+  let timerLimit = 30;
+  let spanTimer = document.querySelector("#timer_number"); //queryselector da definire
+  let secondi = timerLimit; 
 
-let timerText1 = document.querySelector(".timer_text1")
-let timerText2 = document.querySelector(".timer_text2")
-let insideCircle = document.querySelector(".inside_circle")
+  let timerText1 = document.querySelector(".timer_text1")
+  let timerText2 = document.querySelector(".timer_text2")
+  let insideCircle = document.querySelector(".inside_circle")
 
-let timerInterval = setInterval(() => {   //Applico la function setInterval che "fa cose per ogni intervallo (vedi ultimo rigo)"
+  let timerInterval = setInterval(() => {   //Applico la function setInterval che "fa cose per ogni intervallo (vedi ultimo rigo)"
     if (secondi === 0) {                  
         clearInterval(timerInterval);     //se secondi è zero fermati, altrimenti leeeesgooo 
         insideCircle.innerHTML = "&nbsp" 
     } else {                           
         spanTimer.innerText = secondi--;       // = non += pd perchè il + concatena   //itera all'indietro da 31 secondi (timerLimit)
+        
         timerText1.innerText = "SECONDS"
         timerText2.innerText = "REMAINING"                     
     }          
 }, 1000);                                 //Intervallo espresso in ms 1000ms = 1s
+}
+timer()
+
 
 // ITERAZIONE DOMANDE , FELIPE 
 const questions = [
@@ -121,20 +126,19 @@ const questions = [
   ];
 
 
-const questionElement = document.getElementById("question");
+const questionElement = document.getElementById("question"); 
 const labels = document.querySelectorAll("label");
-const currentQuestionIndex = 0; // incrementare quando finisca la domanda
+let currentQuestionIndex = 1; // incrementare quando finisca la domanda */  //ERA CONST E DICEVA CHE NON POTEVA ESSERE GIUSTAMENTE MODIFICATA
 
-const etichette = document.querySelectorAll("#options .answer"); 
 
-const assignQuestionsandAnswers = (questions) =>{
-    
+const assignQuestionsandAnswers = () =>{  //RIMOSSO IL PARAMETRO CHE JE DAVA FASTIDIO
     questionElement.textContent = questions[currentQuestionIndex].question;     //question assignment in "question" h2
     const tutteRisposte = [questions[currentQuestionIndex].correct_answer, ...questions[currentQuestionIndex].incorrect_answers,]; //every answer together
-    const tutteRisposteSort = tutteRisposte.sort(() => Math.random() - 0.5); //randomize the answers così la prima non è sempre la corretta
+    const tutteRisposteSort = tutteRisposte.sort(() => Math.random() - 0.5);    //randomize the answers così la prima non è sempre la corretta
 
     labels.forEach((label, index) => {      //risposte assignment in all labels
         label.textContent = tutteRisposteSort[index];
+        label.addEventListener('click', selectedAnswer);  //AGGIUNTO EVENT LISTENER DI INPUT SELECTION DIRETTAMENTE QUI , altrimenti non trovava le etichette 
     });
 
     if (tutteRisposte.length === 2){
@@ -148,21 +152,22 @@ const assignQuestionsandAnswers = (questions) =>{
     }
                                          
 }
-
 assignQuestionsandAnswers(questions);
 
 
 function shuffle() {
   questions.sort(() => Math.round(Math.random() * 10));
-}
+} 
 
-function inputSelection() {
-  const choices = document.getElementsByClassName("answer");
-
+/* function inputSelection() {
+  let choices = document.querySelectorAll("label")  //Selettore selezionava elemento sbagliato
+  console.log(choices);
   for (let i = 0; i < choices.length; i++) {
     choices[i].addEventListener('click', selectedAnswer);
   }
-}
+} 
+inputSelection()
+ */
 
 function selectedAnswer() {
   currentQuestionIndex++;
@@ -170,13 +175,11 @@ function selectedAnswer() {
     shuffle();
     assignQuestionsandAnswers();
   } else {
-    window.location.href = "/results.html";
+      location.href = "results.html", true;  //FIXATO. Con window dava errore. con location funzia 
   }
-}
-
+} 
 shuffle();
-assignQuestionsandAnswers();
-inputSelection();
-
+assignQuestionsandAnswers(); 
+ 
 
 
