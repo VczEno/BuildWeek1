@@ -179,7 +179,7 @@ button a {
     /* spessore cerchio */
     --c: #00ffff;
     /* colore */
-    --w: 250px;
+    --w: 300px;
     /* grandezza */
     transform: scaleX(-1);
     /* serve per farlo muovere in senso antiorario, !!! si riflettono anche le scritte all'interno, 
@@ -203,7 +203,7 @@ button a {
     /* spessore cerchio */
     --c: #d20094;
     /* colore */
-    --w: 250px;
+    --w: 300px;
     /* grandezza */
 
 
