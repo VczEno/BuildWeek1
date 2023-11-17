@@ -40,7 +40,7 @@ input[type=text] {
     background-color: transparent;
     border-color: transparent;
     border-bottom-color: #d20094;
-    font-size: 1em;
+    font-size: 0.75em;
   }
 
   input[type="text"]::placeholder {
@@ -53,4 +53,10 @@ input[type=text] {
 
   #bottone {
     padding-top: 3em;
+  }
+
+  footer p {
+    font-size: 0.6rem;
+    text-align: center;
+    margin-top: 10em;
   }

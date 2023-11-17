@@ -47,5 +47,13 @@ button.addEventListener('mouseover', () => {
 });
 
 button.addEventListener('mouseout', () => {
-  button.classList.remove('hovered-button');
+    button.classList.remove('hovered-button');
+});
+
+// evento da tastiera per l'input
+let input = document.querySelector("input")
+input.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        document.querySelector("input").value = "";
+    }
 });

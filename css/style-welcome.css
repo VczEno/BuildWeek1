@@ -25,6 +25,7 @@ h2 {
 p,
 li {
     font-weight: 200;
+    font-size: 0.9rem;
 }
 
 ul {
@@ -87,3 +88,6 @@ ul li {
 
 /* FINE CHECKBOX */
 
+#blinkTxt {
+    font-size: 0.75rem;
+}

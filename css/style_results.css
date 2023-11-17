@@ -2,15 +2,19 @@
 
 /* Selettori generici */
 
-body{
+body {
     box-sizing: border-box;
 }
 
-#top-block, #bottom-block, #center-box {
+#top-block,
+#bottom-block,
+#center-box {
     text-align: center;
 }
 
-h1, p, a {
+h1,
+p,
+a {
     font-family: 'Outfit', 'sans-serif';
 }
 
@@ -29,23 +33,26 @@ h1 {
 }
 
 #top-block {
-   padding-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
 }
 
 /* secondo blocco (punteggio) */
 
 section {
-   position: relative;
-   margin: 6rem 0;
+    position: relative;
+    margin: 6rem 0;
 }
 
-#center-box, .left-box, .right-box {
+#center-box,
+.left-box,
+.right-box {
     display: inline-block;
 }
 
-.left-box, .right-box {
-    position:relative;
-   /*  padding-top: 5rem;
+.left-box,
+.right-box {
+    position: relative;
+    /*  padding-top: 5rem;
     padding-bottom: 5rem; */
 }
 
@@ -67,16 +74,16 @@ section {
     border-radius: 50%;
     border: 35px solid #00ffff;
     height: 13rem;
-    width:13rem;
+    width: 13rem;
     box-shadow: 0px 0px 20px rgb(0, 0, 0);
 }
 
-.outercircle{
-    position:relative;
+.outercircle {
+    position: relative;
     border-radius: 50%;
     border: 15px solid #ff00bb;
     height: 13rem;
-    width:13rem;
+    width: 13rem;
     box-shadow: 0px 0px 20px rgb(0, 0, 0);
 }
 
@@ -88,14 +95,17 @@ section {
 }
 
 
-.circle-text p{
-    font-family:'inter', 'sans-serif';
+.circle-text p {
+    font-family: 'inter', 'sans-serif';
     font-weight: 600;
     margin-bottom: 0.6em;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     transform: scaleX(-1);
-   
-} 
+}
+
+.circle-text #certificate {
+    font-size: 0.75rem;
+}
 
 /* formattazione testo secondo blocco */
 
@@ -116,7 +126,7 @@ section {
 }
 
 .blue-text {
-    color: #00ffff ;
+    color: #00ffff;
 
 }
 
@@ -127,27 +137,23 @@ section {
 #certificate {
     font-weight: 200;
     font-size: 0.6rem;
-    line-height: 0.8rem ;
+    line-height: 0.8rem;
 }
 
- /* terzo blocco con tasto RATE US */
-
-#bottom-block {
-   padding: 1.5rem 0
-}
+/* terzo blocco con tasto RATE US */
 
 button {
-    border-radius: 0px;
+    font-family: 'outfit', 'sans-serif';
+    padding: 0.75em 2.5em;
+    font-size: 1.1rem;
+    font-weight: 800;
+    background: none;
     border: 2px solid #fff;
-    background:none;
-    padding: 0.7rem 3rem;
-    
 }
+
 button a {
     text-decoration: none;
     color: #fff;
-    font-weight: 600;
-    font-size: 1rem;
 }
 
 .confetti {
@@ -159,84 +165,113 @@ button a {
 
 /* prove grafico a anello */
 
-@property --p{
+@property --p {
     syntax: '<number>';
     inherits: true;
-    initial-value:0;
-  }
-  
-  .pie { /* anello in primo piano, dinamico */
-    --p:75;   /* porzione anello che si colora */
-    --b:30px;   /* spessore cerchio */
-    --c:#00ffff;  /* colore */
-    --w:250px; /* grandezza */
-    transform: scaleX(-1); /* serve per farlo muovere in senso antiorario, !!! si riflettono anche le scritte all'interno, 
+    initial-value: 0;
+}
+
+.pie {
+    /* anello in primo piano, dinamico */
+    --p: 75;
+    /* porzione anello che si colora */
+    --b: 30px;
+    /* spessore cerchio */
+    --c: #00ffff;
+    /* colore */
+    --w: 250px;
+    /* grandezza */
+    transform: scaleX(-1);
+    /* serve per farlo muovere in senso antiorario, !!! si riflettono anche le scritte all'interno, 
                                 applicare la stessa proprietà anche alle scritte per annullare l'effetto */
-    
-    width:var(--w);
-    aspect-ratio:1;
-    position:relative;
-    display:inline-grid;
-    place-content:center;
+
+    width: var(--w);
+    aspect-ratio: 1;
+    position: relative;
+    display: inline-grid;
+    place-content: center;
     /* font-size:25px;
     font-weight:bold;
     font-family:sans-serif; */
-  }
+}
 
-  .pieFull  { /* anello di sfondo, deve essere pieno e non animato */
-    --p:100;   /* porzione di anello che si colora  */
-    --b:30px;   /* spessore cerchio */
-    --c:#d20094; /* colore */
-    --w:250px; /* grandezza */
-   
-    
-    width:var(--w);
-    aspect-ratio:1;
-    position:relative;
-    display:inline-grid;
-    place-content:center;
+.pieFull {
+    /* anello di sfondo, deve essere pieno e non animato */
+    --p: 100;
+    /* porzione di anello che si colora  */
+    --b: 30px;
+    /* spessore cerchio */
+    --c: #d20094;
+    /* colore */
+    --w: 250px;
+    /* grandezza */
+
+
+    width: var(--w);
+    aspect-ratio: 1;
+    position: relative;
+    display: inline-grid;
+    place-content: center;
     /* font-size:25px;
     font-weight:bold;
     font-family:sans-serif; */
-  }
+}
 
-  .pie:before,
-  .pie:after,
-  .pieFull:before,
-  .pieFull:after { /* rendono il bordo esterno dell'anello circolare, con il radius=0, esce un quadrato */
-    content:"";
-    position:absolute;
-    border-radius:50%;
-  } 
-  .pie:before, .pieFull:before { /* definiscono la colorazione, tramite un "gradiente" con stacco netto da transparente a colorato */
-    inset:0;
+.pie:before,
+.pie:after,
+.pieFull:before,
+.pieFull:after {
+    /* rendono il bordo esterno dell'anello circolare, con il radius=0, esce un quadrato */
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+}
+
+.pie:before,
+.pieFull:before {
+    /* definiscono la colorazione, tramite un "gradiente" con stacco netto da transparente a colorato */
+    inset: 0;
     background:
-      radial-gradient(farthest-side,var(--c) 98%,#0000) top/var(--b) var(--b) no-repeat,
-      conic-gradient(var(--c) calc(var(--p)*1%),#0000 0);
-    -webkit-mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
-            mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
-  }
-  .pie:after, .pieFull:after { /* non cambia averlo o no...boh */
-    inset:calc(50% - var(--b)/2);
-    background:var(--c);
-    
-    transform:rotate(calc(var(--p)*3.6deg)) translateY(calc(50% - var(--w)/2));
-    
-  } 
-    .animate { /* animazione con elemento da animare (p), durata e delay */
-    animation:p 2s 0.5s both;
-    
-  }  
-  .no-round:before {  /* per modificare e arrotondare le estremita */
-    background-size:0 0,auto;
-  }
-  .no-round:after { /* per modificare e arrotondare le estremita */
-    content:none;
-  } 
-@keyframes p {  /* Necessario per l'animazione, variando il valore cambia la porzione precaricata prima di fare l'animazione */
-    from{--p:0}
-  }
-   
+        radial-gradient(farthest-side, var(--c) 98%, #0000) top/var(--b) var(--b) no-repeat,
+        conic-gradient(var(--c) calc(var(--p)*1%), #0000 0);
+    -webkit-mask: radial-gradient(farthest-side, #0000 calc(99% - var(--b)), #000 calc(100% - var(--b)));
+    mask: radial-gradient(farthest-side, #0000 calc(99% - var(--b)), #000 calc(100% - var(--b)));
+}
+
+.pie:after,
+.pieFull:after {
+    /* non cambia averlo o no...boh */
+    inset: calc(50% - var(--b)/2);
+    background: var(--c);
+
+    transform: rotate(calc(var(--p)*3.6deg)) translateY(calc(50% - var(--w)/2));
+
+}
+
+.animate {
+    /* animazione con elemento da animare (p), durata e delay */
+    animation: p 2s 0.5s both;
+
+}
+
+.no-round:before {
+    /* per modificare e arrotondare le estremita */
+    background-size: 0 0, auto;
+}
+
+.no-round:after {
+    /* per modificare e arrotondare le estremita */
+    content: none;
+}
+
+@keyframes p {
+
+    /* Necessario per l'animazione, variando il valore cambia la porzione precaricata prima di fare l'animazione */
+    from {
+        --p: 0
+    }
+}
+
 footer p {
     text-align: center;
     margin: 5em 0 2.5em 0;
