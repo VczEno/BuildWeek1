@@ -30,7 +30,7 @@
             <form id="test">   <!-- Riquadro con domande e rispettive 4 risposte -->
                 <h2 id="question"> <span>  </span> </h2>
 
-                <input type="radio" id="first" name="answer" value="first" class="answer" checked="false">
+                <input type="radio" id="first" name="answer" value="first" class="answer">
                 <label for="first"></label>
 
                 <input type="radio" id="second" name="answer" value="second" class="answer">
@@ -41,12 +41,14 @@
 
                 <input type="radio" id="fourth" name="answer" value="fourth" class="answer">
                 <label for="fourth"></label>
+
+                <input type="radio" name="answer" checked="true" style="display: none;">
             </form>
             
 
-            <h4> QUESTION <span> 1 </span> <span> / 10 </span> </h4> <!--  Scorrere delle domande-->
+            <h4> QUESTION <span class="newQuestion"> 1 </span> <span> / 10 </span> </h4> <!--  Scorrere delle domande-->
         </main>
     </div> 
-    <script src="js/script-test.js"></script>
+    <script src="js/script-test-2.js"></script>
 </body>
 </html> 
