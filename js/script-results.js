@@ -29,3 +29,13 @@ function examResult () {
 examResult()
 
 
+//lisa, hover bottone
+const button = document.getElementById('bottone');;
+
+button.addEventListener('mouseover', () => {
+    button.classList.add('hovered-button');
+});
+
+button.addEventListener('mouseout', () => {
+  button.classList.remove('hovered-button');
+});
