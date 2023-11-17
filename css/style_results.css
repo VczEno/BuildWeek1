@@ -149,6 +149,12 @@ button a {
     font-size: 1rem;
 }
 
+.confetti {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 
 /* prove grafico a anello */
 

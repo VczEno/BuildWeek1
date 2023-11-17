@@ -10,6 +10,10 @@ function examResult () {
     textArea.appendChild(p3)
     let correctAnswers= 75
     if(correctAnswers >= 60) {
+        let passedSound=document.querySelector('#passed')
+        setTimeout(startConfetti, 2000)
+        setTimeout(passedSound.play(), 2000)
+        setTimeout(toggleConfetti,7000);
         p1.innerText=' Congratulations!'
         p2.innerText='You passed the exam.'
         p3.innerText='We\'ll send you the certificate in few minutes. Check your email (including promotions / spam folder)'
@@ -21,4 +25,7 @@ function examResult () {
         p3.innerText='You should get your ass out the class, you\'re embarassing bro...you make your mama cry'
     }
 }
+
 examResult()
+
+
