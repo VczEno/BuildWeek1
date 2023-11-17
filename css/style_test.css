@@ -2,6 +2,11 @@
 /* font-family: 'Inter', sans-serif;
 font-family: 'Outfit', sans-serif; */
 
+h2 {
+    font-size: 3rem;
+    font-weight: 400;
+}
+
 .timer_text1, .timer_text2 {
     text-align: center;
     line-height: 1.2em;
@@ -66,7 +71,10 @@ input[type="radio"]:checked + label {
 }
 
 h4 {
-    margin: 8em 0 0 0;
+    margin: 8em 0 4em 0;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 3px;
 }
 
 h4 span:last-child {

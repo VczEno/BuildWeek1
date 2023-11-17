@@ -27,7 +27,11 @@ header {
   width: 10em;
 }
 
-label:hover, #proceedBtn:hover, input:hover, .stella:hover, #bottone {
+label:hover,
+#proceedBtn:hover,
+input:hover,
+.stella:hover,
+#bottone {
   cursor: pointer;
 }
 
@@ -37,8 +41,16 @@ label:hover, #proceedBtn:hover, input:hover, .stella:hover, #bottone {
   border: #00FFFF;
   font-family: 'outfit', 'sans-serif';
   font-weight: 800;
-  font-size: 1.25em;
+  font-size: 1.1rem;
   padding: 0.75em 2.5em;
   box-shadow: 0 0 100px rgba(52, 152, 219, 0.8);
   cursor: pointer;
+}
+
+
+/*lisa, hover bottone*/
+.hovered-button,
+.blue-btn {
+  transform: scale(1.1);
+  transition: transform 0.5s ease;
 }

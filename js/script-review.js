@@ -38,3 +38,22 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+
+//lisa, hover bottone
+const button = document.getElementById('bottone');;
+
+button.addEventListener('mouseover', () => {
+    button.classList.add('hovered-button');
+});
+
+button.addEventListener('mouseout', () => {
+    button.classList.remove('hovered-button');
+});
+
+// evento da tastiera per l'input
+let input = document.querySelector("input")
+input.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        document.querySelector("input").value = "";
+    }
+});

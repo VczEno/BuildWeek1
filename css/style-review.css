@@ -6,8 +6,8 @@ main{
 
 h2 {
     font-family: 'outfit', 'sans-serif';
-    font-weight: 800;
-    font-size: 3.5em;
+    font-weight: 600;
+    font-size: 3em;
     padding-top: 1em;
     padding-bottom: 0.5em;
 }
@@ -19,7 +19,8 @@ p {
 }
 
 .stella {
-    padding: 0.3em;
+    padding: 0.15rem;
+    font-size: 2rem;
 }
 
 #stelline {
@@ -39,7 +40,7 @@ input[type=text] {
     background-color: transparent;
     border-color: transparent;
     border-bottom-color: #d20094;
-    font-size: 1em;
+    font-size: 0.75em;
   }
 
   input[type="text"]::placeholder {
@@ -52,4 +53,10 @@ input[type=text] {
 
   #bottone {
     padding-top: 3em;
+  }
+
+  footer p {
+    font-size: 0.6rem;
+    text-align: center;
+    margin-top: 10em;
   }
