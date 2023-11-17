@@ -27,7 +27,11 @@ header {
   width: 10em;
 }
 
-label:hover, #proceedBtn:hover, input:hover, .stella:hover, #bottone {
+label:hover,
+#proceedBtn:hover,
+input:hover,
+.stella:hover,
+#bottone {
   cursor: pointer;
 }
 
@@ -45,7 +49,8 @@ label:hover, #proceedBtn:hover, input:hover, .stella:hover, #bottone {
 
 
 /*lisa, hover bottone*/
-.hovered-button , .blue-btn {
+.hovered-button,
+.blue-btn {
   transform: scale(1.1);
-  transition: transform 0.5s ease; 
+  transition: transform 0.5s ease;
 }
