@@ -3,31 +3,32 @@
 function timer() {
   let timerLimit = 5;
   let spanTimer = document.querySelector("#timer_number"); //queryselector da definire
-  let secondi = timerLimit; 
+  let secondi = timerLimit;
 
-  
+
 
   let timerInterval = setInterval(() => {   //Applico la function setInterval che "fa cose per ogni intervallo (vedi ultimo rigo)"
-    if (secondi === 0) {                  
-        /* let insideCircle = document.querySelector(".inside_circle")
-        insideCircle.innerHTML = "<p>&nbsp</p>"  */  
-        selectedAnswer()
-        timer()
+    if (secondi === 0) {
+      /* let insideCircle = document.querySelector(".inside_circle")
+      insideCircle.innerHTML = "<p>&nbsp</p>"  */
+      clearInterval(timerInterval)
+      selectedAnswer()
+      timer()
         // console.log("timer");
-        clearInterval(timerInterval);        //se secondi è zero fermati, altrimenti leeeesgooo */ 
-    } else {   
-        let timerText1 = document.querySelector(".timer_text1")
-        let timerText2 = document.querySelector(".timer_text2")
-                                
-        spanTimer.innerText = secondi--;    // = non += pd perchè il + concatena   //itera all'indietro da 31 secondi (timerLimit)
-        timerText1.innerText = "SECONDS"
-        timerText2.innerText = "REMAINING"
-           
+        ;        //se secondi è zero fermati, altrimenti leeeesgooo */ 
+    } else {
+      let timerText1 = document.querySelector(".timer_text1")
+      let timerText2 = document.querySelector(".timer_text2")
 
-    }          
-}, 1000);                                   //Intervallo espresso in ms 1000ms = 1s
+      spanTimer.innerText = secondi--;    // = non += pd perchè il + concatena   //itera all'indietro da 31 secondi (timerLimit)
+      timerText1.innerText = "SECONDS"
+      timerText2.innerText = "REMAINING"
 
-}
+
+    }
+  }, 1000);
+}  //Intervallo espresso in ms 1000ms = 1s
+
 
 // ITERAZIONE DOMANDE, FELIPE //
 const questions = [
@@ -131,107 +132,93 @@ const questions = [
 ];
 let currentQuestionIndex = [];
 
-const questionElement = document.getElementById("question"); 
+const questionElement = document.getElementById("question");
 const labels = document.querySelectorAll("label");
 
 /* let currentQuestionIndex = 0; */ // incrementare quando finisca la domanda */  //ERA CONST E DICEVA CHE NON POTEVA ESSERE GIUSTAMENTE MODIFICATA
-function randomQuestInd () {
-  let arr=[0,1,2,3,4,5,6,7,8,9]
-  let n=10
-  for(let i=0; i<10; i++) {
-    let ran=(Math.floor(Math.random()*n))
-    currentQuestionIndex.push(...(arr.splice(ran,1)))
+function randomQuestInd() {
+  let arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  let n = 10
+  for (let i = 0; i < 10; i++) {
+    let ran = (Math.floor(Math.random() * n))
+    currentQuestionIndex.push(...(arr.splice(ran, 1)))
     n--
-    console.log(currentQuestionIndex[i])
+    
   }
-  console.log(currentQuestionIndex)
-  
+  console.log('indici casuali domande' + currentQuestionIndex)
+
 }
 randomQuestInd()
 
-const assignQuestionsandAnswers = () =>{  //RIMOSSO IL PARAMETRO CHE JE DAVA FASTIDIO
-    questionElement.textContent = questions[currentQuestionIndex[0]].question;     //question assignment in "question" h2
-    const tutteRisposte = [questions[currentQuestionIndex[0]].correct_answer, ...questions[currentQuestionIndex[0]].incorrect_answers,]; //every answer together
-    const tutteRisposteSort = tutteRisposte.sort(() => Math.random() - 0.5);    //randomize the answers così la prima non è sempre la corretta
-    labels.forEach((label, index) => {      //risposte assignment in all labels
-        label.textContent = tutteRisposteSort[index];
-        label.addEventListener('click', selectedAnswer) 
-      })
-           //AGGIUNTO EVENT LISTENER DI INPUT SELECTION DIRETTAMENTE QUI , altrimenti non trovava le etichette 
+const assignQuestionsandAnswers = () => {  //RIMOSSO IL PARAMETRO CHE JE DAVA FASTIDIO
+  questionElement.textContent = questions[currentQuestionIndex[0]].question;     //question assignment in "question" h2
+  const tutteRisposte = [questions[currentQuestionIndex[0]].correct_answer, ...questions[currentQuestionIndex[0]].incorrect_answers,]; //every answer together
+  const tutteRisposteSort = tutteRisposte.sort(() => Math.random() - 0.5);    //randomize the answers così la prima non è sempre la corretta
+  labels.forEach((label, index) => {      //risposte assignment in all labels
+    label.textContent = tutteRisposteSort[index];
+    label.addEventListener('click', selectedAnswer)
+  })
+  //AGGIUNTO EVENT LISTENER DI INPUT SELECTION DIRETTAMENTE QUI , altrimenti non trovava le etichette 
 
-      if (tutteRisposte.length === 2){
-          labels[2].style.display = "none"; 
-          labels[3].style.display = "none";  //hides the last two labels when there's only 2 answers
-      } else {
-          labels[2].style.display = "inline-block"; 
-          labels[3].style.display = "inline-block";  //hides the last two labels when there's only 2 answers
-      }
-  
-      if(questionElement.textContent.length > 30){
-          questionElement.style.fontSize = "2.4em";
-      }
-  
-}                                        
+  if (tutteRisposte.length === 2) {
+    labels[2].style.display = "none";
+    labels[3].style.display = "none";  //hides the last two labels when there's only 2 answers
+  } else {
+    labels[2].style.display = "inline-block";
+    labels[3].style.display = "inline-block";  //hides the last two labels when there's only 2 answers
+  }
 
-/* function shuffle() { // funziona, domande random
-  questions.sort(() => Math.random() - 0.5);
-}  */
+  if (questionElement.textContent.length > 30) {
+    questionElement.style.fontSize = "2.4em";
+  }
 
-function selectedAnswer() {
+}
+
+/* function selectedAnswer() {
 
   let questionN=document.querySelector('h4')
   let numberQuestions = document.querySelector(".newQuestion");
   currentQuestionIndex.shift();
   let indiceQuestion=(questions.length+1)-currentQuestionIndex.length;//SI CREA L'11
   if (currentQuestionIndex.length > 0) {
-    /* shuffle(); */
     assignQuestionsandAnswers();
   } else {
     questionN.innerHTML=''
       location.href = "results.html", true;  //FIXATO. Con window dava errore. con location funzia
   }
   numberQuestions.innerText = indiceQuestion
-} 
+}  */
+let correctAnswersCounter = 0; // variabile contatore delle risposte corrette, va dichiarata globalmente!
 
-/*
-let correctAnswersCounter = 0;
-let incorrectAnswersCounter =0;
- function selectedAnswer(event) {
+function selectedAnswer(event) { // riduce il numero delle domande possibili
   
-  let numberQuestions = document.querySelector(".newQuestion");
-  let indiceQuestion; 
-  currentQuestionIndex++;
-  
-  console.log("Función selectedAnswer ejecutada")
-  const userAnswer = event.currentTarget.outerText;
-  const correctAnswer = questions[currentQuestionIndex].correct_answer;
-  
+  let questionN = document.querySelector('h4') 
+  let numberQuestions = document.querySelector(".newQuestion"); //elementi per incrementare in basso il numero della domanda
+  const userAnswer = event.currentTarget.innerText; //salvo la risposta dell'utente nella variabile
+  console.log('risposta utente='+userAnswer)
+  const correctAnswer = questions[currentQuestionIndex[0]].correct_answer; //salvo la risposta corretta
+  console.log('risposta corretta='+correctAnswer)
 
-  if(userAnswer === correctAnswer){
-    correctAnswersCounter ++;
-  } else incorrectAnswersCounter++;
-
-  console.log(userAnswer);
-  console.log(event);
-  console.log("CORRECTS: " + correctAnswersCounter);
-  console.log("INCORRECTS:" + incorrectAnswersCounter);
-  
-  if (currentQuestionIndex < questions.length) {
-    shuffle();
-    assignQuestionsandAnswers();
-    
-  } else {
-      location.href = "results.html", true;  //FIXATO. Con window dava errore. con location funzia 
+  if (userAnswer === correctAnswer) {
+    correctAnswersCounter++; // se corretta incremento il numero di risposte corrette
   }
-  
-  currentQuestionIndex++;
-  numberQuestions.innerText = indiceQuestion;
+  console.log("Correct answers: " + correctAnswersCounter);
+  currentQuestionIndex.shift(); // elimino il primo elemento dell'array IndiciDomande per scorrere le domande
+  if (currentQuestionIndex.length > 0) { // se le domande non sono finite ne appare un altra a schermo
+    
+    console.log(currentQuestionIndex) // stampa ogni volta un array di meno elementi, ovvero gli indici delle domande rimaste
+    numberQuestions.innerText = (questions.length + 1) - currentQuestionIndex.length; // incrementa il numero della domanda, senza mostrare l'11
+    assignQuestionsandAnswers();
+
+  } else {   // domande finite, link ai risultati
+    sessionStorage.setItem("risposte esatte", correctAnswersCounter)
+    questionN.innerHTML = ''
+    location.href = "results.html", true;  //FIXATO. Con window dava errore. con location funzia 
+  }
+
+
 }
- */
 
-
-
-/* timer() */
-assignQuestionsandAnswers();
-
-
+/* 
+timer() */
+assignQuestionsandAnswers()

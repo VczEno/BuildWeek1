@@ -1,4 +1,4 @@
-let correctAnswersCounter= 4
+var correctAnswersCounter = sessionStorage.getItem("risposte esatte")
 
 function examResult () {
     let correctScore= document.querySelectorAll('.left-box p')
@@ -37,7 +37,7 @@ function examResult () {
         p1.innerText='Whoops...Try again'
         p2.innerText='You didn\'t pass the exam.'
         p2.className= 'pink-text'
-        p3.innerText="Since you're not a machine like me, you're build up to fail. Don't worry, take your time to focus on your mistakes and the next time you will succeed"
+        p3.innerText="You're not a machine like me, you're build up to fail. Don't worry, take your time to focus on your mistakes and the next time you will succeed"
     }
 }
 
