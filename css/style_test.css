@@ -44,11 +44,12 @@ label {
     background: 
         linear-gradient(#282952 0 0) padding-box, /*this is your grey background*/
         linear-gradient(to bottom right, #fff, transparent) border-box;
+    
     color: #fff;
     line-height: 2em;
     padding: 14px;
-    border: double 4px transparent;
-    border-radius: 30px;
+    border: double 3px transparent;
+    border-radius: 40px;
     display: inline-block;
     width: 20em;
     height: 2em;
@@ -61,9 +62,9 @@ input[type="radio"] {  /*Nasconde il pallino del radio button*/
 } 
 
 /* CLASSE PER CLICK SU BOTTONE */
-input[type="radio"]:checked + label {
+input[type="radio"]:hover + label {
         width: 20rem;
-        border: double 4px transparent;
+        border: double 3px transparent;
         border-radius: 80px;
         background-image: linear-gradient(to bottom, #d20094, #900080), radial-gradient(circle at bottom right, transparent, #fff);
         background-origin: border-box;
