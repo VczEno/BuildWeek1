@@ -146,7 +146,7 @@ h4 span:last-child {
 }  */
 
 .animate { /* animazione con elemento da animare (p), durata e delay */
-    animation:p 30s 1s linear;
+    animation:p 31s linear infinite;
 }
 
 .no-round:before {  /* per modificare e arrotondare le estremita */
