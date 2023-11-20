@@ -99,9 +99,6 @@ const questions = [
   },
 ];
 
-//
- 
-
 const questionElement = document.getElementById("question");
 const labels = document.querySelectorAll("label");
 
@@ -132,6 +129,14 @@ const assignQuestionsandAnswers = () => {
     label.textContent = tutteRisposteSort[index];
     // \/ Aggiungo come evento al click la funzione selected
     label.addEventListener('click', selectedAnswer)
+    //\/ prova settimeout
+    label.addEventListener('click', () => {
+      animation.classList.remove("animate")
+      resetTimer()
+      //timer()
+
+    })
+    
   })
   //AGGIUNTO EVENT LISTENER DI INPUT SELECTION DIRETTAMENTE QUI , altrimenti non trovava le etichette 
   if (tutteRisposte.length === 2) {
@@ -152,6 +157,10 @@ let correctAnswersCounter = 0; // variabile contatore delle risposte corrette, v
 let numberQuestions = document.querySelector(".newQuestion"); //elementi per incrementare in basso il numero della domanda
 let questionN = document.querySelector('h4') 
 
+// Seleziona i suoni
+let correctSE = document.querySelector('#correct') //VIN FEEDBACK SONORO
+let wrongSE = document.querySelector('#wrong') //VIN FEEDBACK SONORO
+
 function selectedAnswer(event) { // riduce il numero delle domande possibili
   
   const userAnswer = event.currentTarget.innerText; //salvo la risposta dell'utente nella variabile
@@ -161,7 +170,11 @@ function selectedAnswer(event) { // riduce il numero delle domande possibili
 
   if (userAnswer === correctAnswer) {
     correctAnswersCounter++; // se corretta incremento il numero di risposte corrette
-  }
+    setTimeout(correctSE.play(), 1) // VIN FEEDBACK SONORO
+  } else { // VIN FEEDBACK SONORO
+    setTimeout(wrongSE.play(), 1) // VIN FEEDBACK SONORO
+  } // VIN FEEDBACK SONORO
+
   console.log("Correct answers: " + correctAnswersCounter);
 
   currentQuestionIndex.shift(); // elimino il primo elemento dell'array IndiciDomande per scorrere le domande
@@ -174,22 +187,21 @@ function selectedAnswer(event) { // riduce il numero delle domande possibili
   } else {   // domande finite, link ai risultati
     sessionStorage.setItem("risposte esatte", correctAnswersCounter)
     questionN.innerHTML = ''
-    location.href = "results.html", true;  //FIXATO. Con window dava errore. con location funzia 
+    setTimeout (() => {location.href = "results.html", true;}, 500 )  //FIXATO. Con window dava errore. con location funzia 
   }
-
 
 }
 
 
 // \/ FUNZIONE TIMER \/ 
 // Variabili globali perchè servono sia nel timer chee nel reset timer 
-let timerLimit = 30;     //Impostare a 30/60
+let timerLimit = 10;     //Impostare a 30/60
 let spanTimer = document.querySelector("#timer_number")
 let timerText1 = document.querySelector(".timer_text1")
 let timerText2 = document.querySelector(".timer_text2")
 let animation = document.querySelector(".pie")
 
-function timer() {
+ function timer() {
 
   let timerInterval = setInterval(() => {
     spanTimer.innerHTML = timerLimit--
@@ -201,7 +213,6 @@ function timer() {
       clearInterval(timerInterval)
       /* alert("tempo scaduto") */
       /* randomQuestInd() */
-
       console.log("assegno nuova domanda"); 
       // \/ Utilizzo righe di codice di selectedAnswer perchè allo scadere del timer deve fare le stesse identiche cose di quando clicco su una risposta
       currentQuestionIndex.shift(); // elimino il primo elemento dell'array IndiciDomande per scorrere le domande
@@ -211,30 +222,30 @@ function timer() {
       assignQuestionsandAnswers();
       // Ma in più aggiungo il reset del timer, così al cambiare della domanda il timer riparte
       resetTimer()
+      timer()
       console.log("reset timer nel timer");     
       } else {   // domande finite, link ai risultati
         sessionStorage.setItem("risposte esatte", correctAnswersCounter)
         questionN.innerHTML = ''
-        location.href = "results.html", true;  //FIXATO. Con window dava errore. con location funzia 
+        setTimeout (() => {location.href = "results.html", true;},500 )//FIXATO. Con window dava errore. con location funzia 
       } 
     }
   },1000)
-
 } 
 
 // \/ Funzione che riavvia il timer
 function resetTimer() {  
   //Fa ripartire la funzione con innerText identici
-  timerLimit = 30    //Impostare a 30/60
+  timerLimit = 10    //Impostare a 30/60
   spanTimer.innerHTML = timerLimit--
   timerText1.innerText = "SECONDS"
   timerText2.innerText = "REMAINING"
-  animation.classList.toggle("animate")
-  timer()
+  animation.classList.remove("animate")
+  // timer()
   // console.log("timer nel reset timer");
 }
 
 randomQuestInd()
 assignQuestionsandAnswers()
-// timer() //Avvia timer al caricamento della pagina */
+timer() //Avvia timer al caricamento della pagina */
 

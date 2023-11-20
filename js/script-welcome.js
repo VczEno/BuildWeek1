@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
   let checkbox = document.querySelector('.checkbox-container input');
   let button = document.querySelector('.blue-btn');
