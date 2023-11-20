@@ -43,8 +43,7 @@ form {
 label {
     background: 
         linear-gradient(#282952 0 0) padding-box, /*this is your grey background*/
-        linear-gradient(to bottom right, #fff, transparent) border-box;
-    
+        linear-gradient(to bottom right, #fff, transparent) border-box; 
     color: #fff;
     line-height: 2em;
     padding: 14px;
@@ -119,6 +118,8 @@ h4 span:last-child {
     aspect-ratio:1;
     position: relative;
     place-content:center;
+    box-shadow: 0 0 20px black;
+    border-radius: 50%;
   }
 
   .pie:before,

@@ -24,9 +24,11 @@
         EXTRA:
         / Dai un feedback sulla risposta al momento del click (corretta o sbagliata)
         / Visualizza una domanda alla volta in sequenza piuttosto che tutte assieme in forma di lista
-        / Permetti all'utente di selezionare la difficoltà del quiz prima di iniziare e il numero di domande che desidera ricevere.
-        ( Se hai implementato l'applicazione usando l'URL fornito, puoi ottenere i dati che ti servono in modo semplice, 
-        usando query parameters in questo modo: https://opentdb.com/api.php?amount=10&category=18&difficulty=easy e modificarne il numero di domande e difficoltà )
+        / Permetti all'utente di selezionare la difficoltà del quiz prima di iniziare e il numero di domande 
+        che desidera ricevere.
+        ( Se hai implementato l'applicazione usando l'URL fornito, puoi ottenere i dati che ti servono in modo semplice,
+        usando query parameters in questo modo: https://opentdb.com/api.php?amount=10&category=18&difficulty=easy 
+        e modificarne il numero di domande e difficoltà )
     
         /* NON DIMENTICARE...
           di fare commit & push del codice regolarmente sulla tua repository GitHub e di condividerla con i tuoi colleghi
@@ -50,6 +52,16 @@
           "Central Processor Unit",
         ],
       },
+
+      { 
+        type:"boolean",
+        difficulty:"medium",
+        category:"Science: Computers",
+        question:"&quot;Windows NT&quot; is a monolithic kernel.",
+        correct_answer:"False",
+        incorrect_answers: ["True"]
+      }, 
+
       {
         category: "Science: Computers",
         type: "multiple",
@@ -136,6 +148,8 @@
         incorrect_answers: ["Python", "C", "Jakarta"],
       },
     ];
+
+      
 
     window.onload = function () {
       // TIPS:

@@ -195,7 +195,7 @@ function selectedAnswer(event) { // riduce il numero delle domande possibili
 
 // \/ FUNZIONE TIMER \/ 
 // Variabili globali perchè servono sia nel timer chee nel reset timer 
-let timerLimit = 10;     //Impostare a 30/60
+let timerLimit = 30;     //Impostare a 30/60
 let spanTimer = document.querySelector("#timer_number")
 let timerText1 = document.querySelector(".timer_text1")
 let timerText2 = document.querySelector(".timer_text2")
@@ -236,7 +236,7 @@ let animation = document.querySelector(".pie")
 // \/ Funzione che riavvia il timer
 function resetTimer() {  
   //Fa ripartire la funzione con innerText identici
-  timerLimit = 10    //Impostare a 30/60
+  timerLimit = 30    //Impostare a 30/60
   spanTimer.innerHTML = timerLimit--
   timerText1.innerText = "SECONDS"
   timerText2.innerText = "REMAINING"

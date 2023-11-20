@@ -3,11 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
   let checkbox = document.querySelector('.checkbox-container input');
   let button = document.querySelector('.blue-btn');
   let text = document.querySelector('#blinkTxt')
-
-  checkbox.addEventListener('change', () => {
-    button.disabled = !checkbox.checked;
-  });
-
+  
+// grande vin 
   button.addEventListener('click', (event) => {
     if (!checkbox.checked) {
       event.preventDefault();
