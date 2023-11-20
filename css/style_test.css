@@ -7,7 +7,8 @@ h2 {
     font-weight: 400;
 }
 
-.timer_text1, .timer_text2 {
+.timer_text1,
+.timer_text2 {
     text-align: center;
     line-height: 1.2em;
     font-size: 0.7em;
@@ -47,9 +48,10 @@ form {
 }
 
 label {
-    background: 
-        linear-gradient(#282952 0 0) padding-box, /*this is your grey background*/
-        linear-gradient(to bottom right, #fff, transparent) border-box; 
+    background:
+        linear-gradient(#282952 0 0) padding-box,
+        /*this is your grey background*/
+        linear-gradient(to bottom right, #fff, transparent) border-box;
     color: #fff;
     line-height: 2em;
     padding: 14px;
@@ -62,18 +64,19 @@ label {
     /* transition: all 0.3s;  */
 }
 
-input[type="radio"] {  /*Nasconde il pallino del radio button*/
+input[type="radio"] {
+    /*Nasconde il pallino del radio button*/
     display: none;
-} 
+}
 
 /* CLASSE PER CLICK SU BOTTONE */
-input[type="radio"]:hover + label {
-        width: 20rem;
-        border: double 3px transparent;
-        border-radius: 80px;
-        background-image: linear-gradient(to bottom, #d20094, #900080), radial-gradient(circle at bottom right, transparent, #fff);
-        background-origin: border-box;
-        background-clip: padding-box, border-box;
+input[type="radio"]:hover+label {
+    width: 20rem;
+    border: double 3px transparent;
+    border-radius: 80px;
+    background-image: linear-gradient(to bottom, #d20094, #900080), radial-gradient(circle at bottom right, transparent, #fff);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
 }
 
 h4 {
@@ -89,81 +92,95 @@ h4 span:last-child {
 
 /* prove timer anello */
 
-@property --p{
+@property --p {
     syntax: '<number>';
     inherits: true;
-    initial-value:0;
-  }
-  
-  .timer {
+    initial-value: 0;
+}
+
+.timer {
     position: absolute;
     top: 7%;
     right: 10%;
-  }
-  
-  .pie { /* anello in primo piano, dinamico */
-    --p:100;   /* porzione anello che si colora */
-    --b:1em;   /* spessore cerchio */
-    --c:cyan;  /* colore */
-    --w:10em; /* grandezza */
-    transform: scaleX(1); /* serve per farlo muovere in senso antiorario, !!! si riflettono anche le scritte all'interno, 
-                                applicare la stessa proprietà anche alle scritte per annullare l'effetto */   
-    width:var(--w);
-    aspect-ratio:1;
-    display:inline-grid;
+}
+
+.pie {
+    /* anello in primo piano, dinamico */
+    --p: 100;
+    /* porzione anello che si colora */
+    --b: 1em;
+    /* spessore cerchio */
+    --c: cyan;
+    /* colore */
+    --w: 10em;
+    /* grandezza */
+    transform: scaleX(1);
+    /* serve per farlo muovere in senso antiorario, !!! si riflettono anche le scritte all'interno, 
+    applicare la stessa proprietà anche alle scritte per annullare l'effetto */
+    width: var(--w);
+    aspect-ratio: 1;
+    display: inline-grid;
     place-content: center;
     position: absolute;
-  }
+}
 
-  .pieFull  { /* anello di sfondo, deve essere pieno e non animato */
-    --p:100;   /* porzione di anello che si colora  */
-    --b:1em;   /* spessore cerchio */
-    --c:rgb(142, 101, 150); /* colore */
-    --w:10em; /* grandezza */
-    width:var(--w);
-    aspect-ratio:1;
+.pieFull {
+    /* anello di sfondo, deve essere pieno e non animato */
+    --p: 100;
+    /* porzione di anello che si colora  */
+    --b: 1em;
+    /* spessore cerchio */
+    --c: rgb(142, 101, 150);
+    /* colore */
+    --w: 10em;
+    /* grandezza */
+    width: var(--w);
+    aspect-ratio: 1;
     position: relative;
-    place-content:center;
+    place-content: center;
     box-shadow: 0 0 20px black;
     border-radius: 50%;
-  }
+}
 
-  .pie:before,
-  .pie:after,
-  .pieFull:before,
-  .pieFull:after { /* rendono il bordo esterno dell'anello circolare, con il radius=0, esce un quadrato */
-    content:"";
-    position:absolute;
-    border-radius:50%;
-  } 
+.pie:before,
+.pie:after,
+.pieFull:before,
+.pieFull:after {
+    /* rendono il bordo esterno dell'anello circolare, con il radius=0, esce un quadrato */
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+}
 
-  .pie:before, .pieFull:before { /* definiscono la colorazione, tramite un "gradiente" con stacco netto da transparente a colorato */
-    inset:0;
+/* definiscono la colorazione, tramite un "gradiente" con stacco netto da transparente a colorato */
+.pie:before,
+.pieFull:before {
+    inset: 0;
     background:
-      radial-gradient(farthest-side,var(--c) 98%,#0000) top/var(--b) var(--b) no-repeat,
-      conic-gradient(var(--c) calc(var(--p)*1%),#0000 0);
-    -webkit-mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
-            mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
-  }
-
-/*   .pie:after, .pieFull:after { /* non cambia averlo o no...boh 
-    inset:calc(50% - var(--b)/2);
-    background:var(--c);
-    transform:rotate(calc(var(--p)*3.6deg)) translateY(calc(50% - var(--w)/2));  
-}  */
-
-.animate { /* animazione con elemento da animare (p), durata e delay */
-    animation:p 31s linear infinite;
+        radial-gradient(farthest-side, var(--c) 98%, #0000) top/var(--b) var(--b) no-repeat,
+        conic-gradient(var(--c) calc(var(--p)*1%), #0000 0);
+    -webkit-mask: radial-gradient(farthest-side, #0000 calc(99% - var(--b)), #000 calc(100% - var(--b)));
+    mask: radial-gradient(farthest-side, #0000 calc(99% - var(--b)), #000 calc(100% - var(--b)));
 }
 
-.no-round:before {  /* per modificare e arrotondare le estremita */
-    background-size:0 0,auto;
+/* animazione con elemento da animare (p), durata e delay */
+.animate {
+    animation: p 31s linear infinite;
 }
 
-.no-round:after { /* per modificare e arrotondare le estremita */
-    content:none;
-} 
+/* per modificare e arrotondare le estremita */
+.no-round:before {
+    background-size: 0 0, auto;
+}
 
-@keyframes p {  /* Necessario per l'animazione, variando il valore cambia la porzione precaricata prima di fare l'animazione */
-    from{--p:0}
+/* per modificare e arrotondare le estremita */
+.no-round:after {
+    content: none;
+}
+
+/* Necessario per l'animazione, variando il valore cambia la porzione precaricata prima di fare l'animazione */
+@keyframes p {
+    from {
+        --p: 0
+    }
 }

@@ -1,60 +1,60 @@
-main{
-    text-align: center;
+main {
+  text-align: center;
 }
 
 h2 {
-    font-family: 'outfit', 'sans-serif';
-    font-weight: 600;
-    font-size: 3em;
-    padding-top: 1em;
-    padding-bottom: 0.5em;
+  font-family: 'outfit', 'sans-serif';
+  font-weight: 600;
+  font-size: 3em;
+  padding-top: 1em;
+  padding-bottom: 0.5em;
 }
 
 p {
-    font-family: 'inter', 'sans-serif';
-    font-size: 1.5em;
-    padding-bottom: 1em;
+  font-family: 'inter', 'sans-serif';
+  font-size: 1.5em;
+  padding-bottom: 1em;
 }
 
 .stella {
-    padding: 0.15rem;
-    font-size: 2rem;
+  padding: 0.15rem;
+  font-size: 2rem;
 }
 
 #stelline {
-    padding-bottom: 3.5em;
+  padding-bottom: 3.5em;
 }
 
 path {
-    fill: grey;
-    transition: fill 0.3s ease;
+  fill: grey;
+  transition: fill 0.3s ease;
 }
 
 input[type=text] {
-    color: white;
-    width: 40%;
-    padding: 1em 0.5em;
-    margin: 0.6em;
-    background-color: transparent;
-    border-color: transparent;
-    border-bottom-color: #d20094;
-    font-size: 0.75em;
-  }
+  color: white;
+  width: 40%;
+  padding: 1em 0.5em;
+  margin: 0.6em;
+  background-color: transparent;
+  border-color: transparent;
+  border-bottom-color: #d20094;
+  font-size: 0.75em;
+}
 
-  input[type="text"]::placeholder {
-    padding-left: 20px;
-  }
+input[type="text"]::placeholder {
+  padding-left: 20px;
+}
 
- input:focus {
-    outline: none;
- }
+input:focus {
+  outline: none;
+}
 
-  #bottone {
-    padding-top: 3em;
-  }
+#bottone {
+  padding-top: 3em;
+}
 
-  footer p {
-    font-size: 0.6rem;
-    text-align: center;
-    margin-top: 10em;
-  }
+footer p {
+  font-size: 0.6rem;
+  text-align: center;
+  margin-top: 10em;
+}

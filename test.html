@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,27 +9,32 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style_test.css">
 </head>
+
 <body>
     <div class="container">
-        <header> 
-            <img src="materiale BW1/assets/epicode_logo.png" alt="" id="logo"> <!-- Logo -->
+        <header>
+            <!-- Logo -->
+            <img src="materiale BW1/assets/epicode_logo.png" alt="" id="logo">
         </header>
 
         <div class="timer">
-            <div class="pieFull no-round">  <!-- Timer -->
-                <div class="pie no-round">  <!-- Classe animate che anima il timer -->
+            <!-- Timer -->
+            <div class="pieFull no-round">
+                <!-- Classe animate che anima il timer -->
+                <div class="pie no-round">
                     <div class="inside_circle">
-                        <p  class="timer_text1"></p>
+                        <p class="timer_text1"></p>
                         <p id="timer_number"></p>
-                        <p  class="timer_text2"></p>     
+                        <p class="timer_text2"></p>
                     </div>
-                </div>   
+                </div>
             </div>
         </div>
-        
+
         <main>
-            <form id="test">   <!-- Riquadro con domande e rispettive 4 risposte -->
-                <h2 id="question"> <span>  </span> </h2>
+            <!-- Riquadro con domande e rispettive 4 risposte -->
+            <form id="test">
+                <h2 id="question"> <span> </span> </h2>
 
                 <input type="radio" id="first" name="answer" value="first" class="answer">
                 <label for="first"></label>
@@ -42,17 +48,19 @@
                 <input type="radio" id="fourth" name="answer" value="fourth" class="answer">
                 <label for="fourth"></label>
 
-               <!--  <input type="radio" name="answer" checked="true" style="display: none;"> -->
+                <!--  <input type="radio" name="answer" checked="true" style="display: none;"> -->
             </form>
             <audio id='correct' src="materiale BW1/assets/CorrectSoundEffect.mp3"></audio>
             <audio id='wrong' src="materiale BW1/assets/WrongSoundEffect.mp3"></audio>
 
             <div class="Question-number">
-                <h4> QUESTION <span class="newQuestion"> 1 </span> <span> / 10 </span> </h4> <!--  Scorrere delle domande-->
+                <!--  Scorrere delle domande-->
+                <h4> QUESTION <span class="newQuestion"> 1 </span> <span> / 10 </span> </h4>
             </div>
         </main>
-        
-    </div> 
+
+    </div>
     <script src="js/script-test-2.js"></script>
 </body>
-</html> 
+
+</html>

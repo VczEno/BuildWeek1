@@ -1,5 +1,3 @@
-
-
 h1 {
     font-family: 'Outfit', sans-serif;
     font-size: 4rem;
@@ -61,7 +59,6 @@ ul li {
     width: 1em;
     border: 2.5px solid #fff;
     background-color: transparent;
-   
 }
 
 .checkmark:after {
@@ -76,12 +73,9 @@ ul li {
 
 .checkbox-container .checkmark:after {
     content: "✓";
-    left: 0.15em;
     width: 1em;
     height: 1em;
     color: #fff;
-    /* border: solid white; */
-/*     border-width: 0 3px 3px 0; */
     transform: rotate(0deg);
 }
 
@@ -90,22 +84,3 @@ ul li {
 #blinkTxt {
     font-size: 0.75rem;
 }
-
-/* .blinkAnimation {
-    color: blue;
-    animation: blinky 1s linear infinite;
-}
-
-@keyframes blinky { 
-    0% { 
-        opacity: 0; 
-    } 
-
-    50% { 
-        opacity: 0.7; 
-    } 
-
-    100% { 
-        opacity: 0; 
-    } 
-}  */
