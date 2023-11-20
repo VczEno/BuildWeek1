@@ -247,5 +247,5 @@ function resetTimer() {
 
 randomQuestInd()
 assignQuestionsandAnswers()
-/* timer()  *///Avvia timer al caricamento della pagina */
+timer()  //Avvia timer al caricamento della pagina */
 
