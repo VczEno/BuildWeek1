@@ -6,6 +6,7 @@ html {
   font-size: 1em;
   color: #fff;
   font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
 }
 
 body {

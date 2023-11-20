@@ -148,7 +148,7 @@ const assignQuestionsandAnswers = () => {
   }
 
   if (questionElement.textContent.length > 30) {
-    questionElement.style.fontSize = "2.4em";
+    questionElement.style.fontSize = "2em";
   }
 
 }
@@ -247,5 +247,5 @@ function resetTimer() {
 
 randomQuestInd()
 assignQuestionsandAnswers()
-timer() //Avvia timer al caricamento della pagina */
+/* timer()  *///Avvia timer al caricamento della pagina */
 
